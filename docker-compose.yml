@@ -1,0 +1,14 @@
+# Compose a postgres database together with the extension pgvector
+services:
+  db:
+    hostname: db
+    image: ankane/pgvector
+    ports:
+     - 5432:5432
+    restart: always
+    environment:
+      - POSTGRES_USER=testusername
+      - POSTGRES_PASSWORD=testpwd
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    volumes:
+     - ./init.sql:/docker-entrypoint-initdb.d/init.sql

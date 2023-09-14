@@ -1,5 +1,5 @@
-# Name this repo!
-[Description goes here]
+# PgVector Demo
+Showcase how to implement a vectorized search using PostgreSQL and Python.
 
 ```python
 # some python code for reference..
@@ -9,20 +9,20 @@ class YouGoPydantic(BaseModel):
 ```
 
 ## 🧰 Features
-- Feature 1
-- Feature 2
-  - Subfeature 1
-  - Subfeature 2
-- Feature 3
+- Docker setup for PostgreSQL with pgvector extension
+- Python code to create a vectorized search using pgvector
 
 ## 💻 Usage
 1. Clone this repository to your local machine.
 2. Install the required dependencies using the following command:
     ```shell
-    pip install -r requirements.txt
+    docker.....
     ```
 
-## 📋 TODOs
-- [ ] TODO 1
-- [ ] TODO 2
-- [ ] TODO 3
+[//]: # (## 📋 TODOs)
+
+[//]: # (- [ ] TODO 1)
+
+[//]: # (- [ ] TODO 2)
+
+[//]: # (- [ ] TODO 3)

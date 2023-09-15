@@ -1,25 +1,13 @@
-import os
 import psycopg2
+
+from app.db.config import db_config
 
 
 def create_db_connection():
+    params = db_config()
     try:
-        conn = psycopg2.connect(
-            host="localhost",
-            database="postgres",
-            user="testuser",
-            password="testpwd",
-            port=5432
-        )
-        yield conn
+        conn = psycopg2.connect(**params)
+        return conn
     except (Exception, psycopg2.Error) as error:
         print("Error while connecting", error)
-    finally:
-        conn.close()
-
-
-with create_db_connection() as connection:
-    cur = connection.cursor()
-    cur.execute("""""")
-    connection.commit()
-    cur.close()
+    return None

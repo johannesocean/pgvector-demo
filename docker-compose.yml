@@ -7,7 +7,8 @@ services:
      - 5432:5432
     restart: always
     environment:
-      - POSTGRES_USER=testusername
+      - POSTGRES_DB=vectordb
+      - POSTGRES_USER=testuser
       - POSTGRES_PASSWORD=testpwd
       - POSTGRES_HOST_AUTH_METHOD=trust
     volumes:

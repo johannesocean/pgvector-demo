@@ -15,9 +15,7 @@ if __name__ == '__main__':
     cursor = connection.cursor()
     try:
         cursor.execute(f"""
-            SELECT 
-                text, 
-                1 - (embedding <=> '{embedding}') AS cosine_similarity
+            SELECT text,  1 - (embedding <=> '{embedding}') AS cosine_similarity
             FROM embeddings
             ORDER BY cosine_similarity desc
             LIMIT 3

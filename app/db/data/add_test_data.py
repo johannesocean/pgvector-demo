@@ -1,9 +1,8 @@
 from app import BASE_DIR  # simply because we need to load .env
 from app.db.connect import create_db_connection
 
-import os
 import psycopg2
-from openai.embeddings_utils import get_embeddings
+from app.utils import get_embeddings
 
 
 if __name__ == '__main__':
@@ -17,7 +16,7 @@ if __name__ == '__main__':
         "Look at this cute hamster munching on a piece of broccoli.",
     ]
 
-    embeddings = get_embeddings(texts, os.getenv('EMBEDDING_MODEL'))
+    embeddings = get_embeddings(texts)
 
     # Write text and embeddings to database
     connection = create_db_connection()

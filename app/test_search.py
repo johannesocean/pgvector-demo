@@ -1,7 +1,6 @@
 from app.db.connect import create_db_connection
 
-import os
-from openai.embeddings_utils import get_embedding
+from utils import get_embedding
 
 
 if __name__ == '__main__':
@@ -9,7 +8,7 @@ if __name__ == '__main__':
     # cosine similarity function within the database.
 
     text = "Did anyone adopt a cat this weekend?"
-    embedding = get_embedding(text, os.getenv('EMBEDDING_MODEL'))
+    embedding = get_embedding(text)
 
     connection = create_db_connection()
     cursor = connection.cursor()
